@@ -44,24 +44,22 @@ This reverses the traditional model: users own their data, and AI services opera
 
 ---
 
-## Architecture Diagram
-
 ```mermaid
 flowchart TD
-    A[User] --> B[Client App (Web/Desktop)]
-    B -->|OIDC Login| C[Solid Pod]
+    A["User"] --> B["Client App - Web/Desktop"]
+    B -->|OIDC Login| C["Solid Pod"]
 
     B -->|Request Access Token| C
     B -->|Scoped Permissions| C
 
-    B --> D[AI Orchestrator Backend]
+    B --> D["AI Orchestrator Backend"]
 
     D -->|Fetch Allowed Data| C
-    D --> E[Privacy Layer]
+    D --> E["Privacy Layer"]
 
-    E -->|Edge Mode| F[Local LLM (Ollama / llama.cpp)]
-    E -->|Trusted Mode| G[Cloud LLM (Claude / OpenAI)]
-    E -->|Hybrid Mode| H[Local Preprocessing + Cloud LLM]
+    E -->|Edge Mode| F["Local LLM (Ollama / llama.cpp)"]
+    E -->|Trusted Mode| G["Cloud LLM (Claude / OpenAI)"]
+    E -->|Hybrid Mode| H["Local Preprocessing + Cloud LLM"]
 
     F --> D
     G --> D
