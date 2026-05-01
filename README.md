@@ -42,6 +42,15 @@ This reverses the traditional model: users own their data, and AI services opera
 - Runs LLM pipelines (summarization, Q&A, RAG)
 - Writes outputs back into the Pod
 
+  **approaches**
+ three approaches for the project:
+
+On-device AI – high privacy since data stays local, but limited by smaller models.
+Backend server AI – more powerful models and faster development, but raises trust and data exposure concerns.
+Hybrid approach – sensitive data processed locally, heavy tasks handled by server.
+
+I feel the hybrid model is the most promising from a research perspective, balancing privacy and performance
+
 ---
 
 ```mermaid
